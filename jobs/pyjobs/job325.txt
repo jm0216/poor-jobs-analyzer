@@ -1,0 +1,9 @@
+Descrição da vaga
+
+Desenvolver soluções de RPA utilizando Python + Selenium.
+
+Requisitos
+
+- Conhecimentos em Selenium
+- Conhecimentos em Flask
+- Bom nível em Python
