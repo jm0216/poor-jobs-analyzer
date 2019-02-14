@@ -22,7 +22,7 @@ def get_job_filenames(directory):
     return full_filenames
 
 
-def evaluate_job(filename, metrics):
+def evaluate_job_file(filename, metrics):
 
     poor_level = 0
 
