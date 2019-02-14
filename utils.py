@@ -4,14 +4,16 @@ import re
 from operator import itemgetter
 
 
-def csv_to_dict(filename):
+def csv_to_list(filename: str) -> list:
+    """Receive an csv filename and returns rows of file with an list"""
     with open(filename) as csv_file:
         reader = csv.DictReader(csv_file)
         csv_data = [line for line in reader]
     return csv_data
 
 
-def get_job_filenames(directory):
+def get_files_in_directory(directory: str) -> list:
+    """Receive an directory and returns an list of filenames in directory"""
     full_filenames = []
 
     for root, dirs, files in os.walk(directory):
@@ -22,8 +24,11 @@ def get_job_filenames(directory):
     return full_filenames
 
 
-def evaluate_job_file(filename, metrics):
-
+def evaluate_job_file(filename: str, metrics: list) -> int:
+    """
+    Receive an filename and metrics (list of dicts containing metrics)
+    and return an poor level
+    """
     poor_level = 0
 
     with open(filename) as file:
@@ -40,6 +45,7 @@ def evaluate_job_file(filename, metrics):
     return poor_level
 
 
-def order_by_key(results_list, order_key):
+def order_by_key(results_list: list, order_key: str) -> list:
+    """Receive an list of dicts and return ordered list by order_key"""
     reordered_results = sorted(results_list, key=itemgetter(order_key))
     return reordered_results
