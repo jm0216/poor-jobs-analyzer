@@ -1,6 +1,6 @@
 import os
 
-from utils import get_pyjob_codes, get_pyjob_content
+from carpet import get_pyjob_codes, get_pyjob_content
 
 JOBS_DIRECTORY = 'jobs/pyjobs'
 
