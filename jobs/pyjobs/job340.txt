@@ -1,0 +1,48 @@
+
+            
+                
+                    Desenvolvedor Python Sênior
+                    Local da vaga: São Paulo - SP
+                    Empresa: Fintech
+                    Postada: hoje
+                
+                
+                  
+                  
+                  Ir para o site da Vaga
+                  
+                  
+                    
+                        
+                            
+                                MongoDB
+                            
+                                Python
+                            
+                        
+                    
+                    
+                        Descrição da vaga
+                        
+                          
+                            Desenvolvimento Web em PythonUso de:Serviços AWS (Elastic Beanstalk, EC2, etc)OpenshiftPyramid (Framework), MongoDB, Celery, PostgreSQL, Docker, CircleCI, Jenkins	Práticas e processos ágeis de desenvolvimento: programação em pares, revisão de código, testes automatizados, Scrum.
+
+CLT + Benefícios (Assistência Médica + VR R$ 27/dia + VT + PLR até 2 salários/ano)
+
+Local: Zona oeste de SP
+
+Uma das maiores fintechs S/A do mercado, em franco crescimento com ambiente arrojado e digital.
+                          
+                        
+                    
+                    
+                        Requisitos
+                        
+                          
+                            Sólida experiencia com Desenvolvimento Web em Python
+                          
+                        
+                    
+                
+            
+        

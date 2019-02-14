@@ -1,0 +1,42 @@
+
+            
+                
+                    Backend Python Sênior
+                    Local da vaga: Pinheiros- São Paulo.
+                    Empresa: Taking
+                    Postada: ontem
+                
+                
+                  
+                    
+                      Você precisa estar logado para aplicar para esta vaga!
+                    
+                  
+                    
+                        
+                            
+                                Python
+                            
+                        
+                    
+                    
+                        Descrição da vaga
+                        
+                          
+                            Atuação no Time de desenvolvimento com boa visão de arquitetura de sistemas e construção de API's REST (atualmente microsserviços com python e flask) para ajudar a desenvolver a melhor e maior plataforma de empréstimos pessoais do país. • Programar, com excelência técnica e boas práticas de programação;• Ser capaz de colaborar com o time quanto às melhores práticas de desenvolvimento web do mercado;• Desenvolver backend das novas funcionalidades do produto;• Familiaridade com as tecnologias que utilizamos: python (framework Flask), mysql, git, testes automatizados;• Vivência em métodos ágeis de desenvolvimento.
+                          
+                        
+                    
+                    
+                        Requisitos
+                        
+                          
+                            •Programar, com excelência técnica e boas práticas de programação;• Ser capaz de colaborar com o time quanto às melhores práticas de desenvolvimento web do mercado;• Desenvolver backend das novas funcionalidades do produto;• Familiaridade com as tecnologias que utilizamos: python (framework Flask), mysql, git, testes automatizados;• Vivência em métodos ágeis de desenvolvimento.
+
+Contratação: CLT + VA+ VR+ VT+ AM (50% para depentendes).
+                          
+                        
+                    
+                
+            
+        

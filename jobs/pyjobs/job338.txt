@@ -1,0 +1,60 @@
+
+            
+                
+                    Desenvolvedor
+                    Local da vaga: Curitiba/PR
+                    Empresa: Mercafácil
+                    Postada: ontem
+                
+                
+                  
+                  
+                  Ir para o site da Vaga
+                  
+                  
+                    
+                        
+                            
+                                AWS
+                            
+                                PostgreSQL
+                            
+                                Apache
+                            
+                                Node.js
+                            
+                                MongoDB
+                            
+                                Python
+                            
+                        
+                    
+                    
+                        Descrição da vaga
+                        
+                          
+                            Buscamos um #desenvolvedor com a mente aberta para novas tecnologias, que irá trabalhar com diversas técnicas de integração de sistemas utilizadas no mercado e também com tecnologias de ponta para processamento de grandes massas de dados em plataformas analíticas.
+                          
+                        
+                    
+                    
+                        Requisitos
+                        
+                          
+                            Utilizamos as seguintes tecnologias:o Python· Flask· Numpy· Pandas
+
+o Node JS· Serverless
+
+o Apache Airflow
+
+o Serviços da nuvem AWS· EC2· ECS· Batch· ASG· RDS
+
+o Bancos de dados· PostgreSQL· ClickHouse· MongoDB· MonetDB
+
+o Go· Suture· gRPC
+                          
+                        
+                    
+                
+            
+        

@@ -1,0 +1,52 @@
+
+            
+                
+                    Desenvolvedor de Software
+                    Local da vaga: Florianópolis/SC
+                    Empresa: ESSS
+                    Postada: 12 de Fevereiro de 2019
+                
+                
+                  
+                  
+                  Ir para o site da Vaga
+                  
+                  
+                    
+                        
+                            
+                                Linux
+                            
+                                Windows
+                            
+                                C++
+                            
+                                Python
+                            
+                        
+                    
+                    
+                        Descrição da vaga
+                        
+                          
+                            Para essa posição seus principais desafios serão:
+
+● Desenvolver softwares de Computer-Aided Engineering (CAE)● Desenvolver GUIs multi-plataforma com testes automatizados (testes unitários e de aceitação)● Desenvolver algoritmos e estrutura de dados para visualização 3D● Realizar correções e aperfeiçoamentos em softwares existentes
+
+Tecnologias que Utilizamos (conhecimento prévios nestes itens são valorizados):
+
+● Desenvolvimento multi-linguagem Python 3 e C++● Desenvolvimento multi-plataforma Linux e Windows● Desenvolvimento de GUIs em Python com Qt e VTK● Metodologias Ágeis (Integração Contínua, Revisão de Código, SCRUM)● Git, Jenkins
+                          
+                        
+                    
+                    
+                        Requisitos
+                        
+                          
+                            ● Conhecimentos em desenvolvimento de interfaces gráficas● Inglês intermediário● Trabalho em equipe
+                          
+                        
+                    
+                
+            
+        
