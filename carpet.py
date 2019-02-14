@@ -26,12 +26,13 @@ def get_files_in_directory(directory: str) -> list:
     return full_filenames
 
 
-def evaluate_job_file(filename: str, metrics: list) -> int:
+def evaluate_job_file(filename: str, metrics: list) -> tuple:
     """
     Receive an filename and metrics (list of dicts containing metrics)
-    and return an poor level
+    and return an poor level and words with match
     """
     poor_level = 0
+    words = []
 
     with open(filename) as file:
         content = file.read()
@@ -43,8 +44,9 @@ def evaluate_job_file(filename: str, metrics: list) -> int:
 
         if re.search(pattern, lower_content):
             poor_level += int(metric['Poor level'])
+            words.append(metric['Terms'])
 
-    return poor_level
+    return poor_level, words
 
 
 def order_by_key(results_list: list, order_key: str) -> list:
