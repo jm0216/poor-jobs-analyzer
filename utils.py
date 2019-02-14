@@ -1,7 +1,9 @@
 import csv
 import os
 import re
+from html.parser import HTMLParser
 from operator import itemgetter
+from urllib import request
 
 
 def csv_to_list(filename: str) -> list:
@@ -49,3 +51,53 @@ def order_by_key(results_list: list, order_key: str) -> list:
     """Receive an list of dicts and return ordered list by order_key"""
     reordered_results = sorted(results_list, key=itemgetter(order_key))
     return reordered_results
+
+
+def get_pyjob_codes(url='http://www.pyjobs.com.br/', page=1) -> list:
+    """Receive and url and page of pyjobs and return list of codes of jobs"""
+    full_url = '{}?page={}'.format(url, page)
+    response = request.urlopen(full_url)
+
+    pattern = r'href="/job/([0-9]+)/"'
+
+    job_codes = []
+    for line in response:
+        decoded_line = line.decode('utf-8')
+        match = re.search(pattern, decoded_line)
+        if match:
+            job_code = match.group(1)
+            job_codes.append(job_code)
+
+    return job_codes
+
+
+class ParsePyjobsHTML(HTMLParser):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.parsed_content = ""
+        self.capture_content = False
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'section':
+            self.capture_content = True
+
+    def handle_endtag(self, tag):
+        if tag == 'section':
+            self.capture_content = False
+
+    def handle_data(self, data):
+        if self.capture_content:
+            self.parsed_content += data
+
+
+def get_pyjob_content(pyjob_code: str) -> str:
+    """Get an pyjob_code and return your description"""
+    job_url = 'http://www.pyjobs.com.br/job/{}/'
+    url = job_url.format(pyjob_code)
+
+    response = request.urlopen(url)
+    response_content = response.read().decode('utf-8')
+
+    parser = ParsePyjobsHTML()
+    parser.feed(response_content)
+    return parser.parsed_content
