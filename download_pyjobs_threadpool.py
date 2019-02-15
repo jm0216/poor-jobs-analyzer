@@ -10,6 +10,9 @@ if __name__ == '__main__':
     contents = async_get_pyjob_content(pyjob_codes)
 
     for pyjob_code, content in contents:
+        if not content:
+            continue
+
         filename = 'job{}.txt'.format(pyjob_code)
         full_filename = os.path.join(JOBS_DIRECTORY, filename)
 
