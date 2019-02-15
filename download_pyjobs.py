@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     for pyjob_code in pyjob_codes:
         print('Downloading pyjob {}'.format(pyjob_code))
-        content = get_pyjob_content(pyjob_code)
+        _, content = get_pyjob_content(pyjob_code)
 
         filename = 'job{}.txt'.format(pyjob_code)
         full_filename = os.path.join(JOBS_DIRECTORY, filename)

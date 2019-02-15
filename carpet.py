@@ -5,6 +5,9 @@ from html.parser import HTMLParser
 from operator import itemgetter
 from urllib import request
 
+from concurrent import futures
+from concurrent.futures import ThreadPoolExecutor
+
 
 def csv_to_list(filename: str) -> list:
     """Receive an csv filename and returns rows of file with an list"""
@@ -102,4 +105,42 @@ def get_pyjob_content(pyjob_code: str) -> str:
 
     parser = ParsePyjobsHTML()
     parser.feed(response_content)
-    return parser.parsed_content
+    return (pyjob_code, parser.parsed_content)
+
+
+def async_get_pyjob_codes(initial_page: int, final_page: int, max_workers=10) -> list:
+    """Get initial_page and final_page of pyjobs and return a list pyjob_codes from pages"""
+    print('Running async_get_pyjob_codes...')
+    pyjob_codes = []
+    pages = range(initial_page, final_page + 1)
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        to_do_map = {}
+        for page in pages:
+            future = executor.submit(get_pyjob_codes, page=page)
+            to_do_map[future] = page
+
+        done_iter = futures.as_completed(to_do_map)
+
+        for future in done_iter:
+            pyjob_codes += future.result()
+
+    return pyjob_codes
+
+
+def async_get_pyjob_content(pyjob_codes: list, max_workers=10) -> list:
+    """Get pyjob_codes, get content of pyjob and return a list of contents"""
+    print('Running async_get_pyjob_content...')
+    contets = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        to_do_map = {}
+        for pyjob_code in pyjob_codes:
+            future = executor.submit(get_pyjob_content, pyjob_code=pyjob_code)
+            to_do_map[future] = pyjob_code
+
+        done_iter = futures.as_completed(to_do_map)
+
+        for future in done_iter:
+            pyjob_code, content = future.result()
+            contets.append((pyjob_code, content))
+
+    return contets
