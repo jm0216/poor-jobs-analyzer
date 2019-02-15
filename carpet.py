@@ -1,12 +1,12 @@
 import csv
 import os
 import re
+from concurrent import futures
+from concurrent.futures import ThreadPoolExecutor
 from html.parser import HTMLParser
 from operator import itemgetter
 from urllib import request
-
-from concurrent import futures
-from concurrent.futures import ThreadPoolExecutor
+from urllib.error import HTTPError
 
 
 def csv_to_list(filename: str) -> list:
@@ -60,12 +60,16 @@ def order_by_key(results_list: list, order_key: str) -> list:
 
 def get_pyjob_codes(url='http://www.pyjobs.com.br/', page=1) -> list:
     """Receive and url and page of pyjobs and return list of codes of jobs"""
+    job_codes = []
     full_url = '{}?page={}'.format(url, page)
-    response = request.urlopen(full_url)
+
+    try:
+        response = request.urlopen(full_url)
+    except HTTPError as exc:
+        print('Error "{}" when get "{}"'.format(exc.msg, full_url))
+        return job_codes
 
     pattern = r'href="/job/([0-9]+)/"'
-
-    job_codes = []
     for line in response:
         decoded_line = line.decode('utf-8')
         match = re.search(pattern, decoded_line)
@@ -100,7 +104,12 @@ def get_pyjob_content(pyjob_code: str) -> str:
     job_url = 'http://www.pyjobs.com.br/job/{}/'
     url = job_url.format(pyjob_code)
 
-    response = request.urlopen(url)
+    try:
+        response = request.urlopen(url)
+    except HTTPError as exc:
+        print('Error "{}" when get "{}"'.format(exc.msg, url))
+        return (pyjob_code, None)
+
     response_content = response.read().decode('utf-8')
 
     parser = ParsePyjobsHTML()

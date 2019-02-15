@@ -6,7 +6,7 @@ JOBS_DIRECTORY = 'jobs/pyjobs'
 
 if __name__ == '__main__':
 
-    pyjob_codes = async_get_pyjob_codes(initial_page=1, final_page=4)
+    pyjob_codes = async_get_pyjob_codes(initial_page=1, final_page=7)
     contents = async_get_pyjob_content(pyjob_codes)
 
     for pyjob_code, content in contents:
