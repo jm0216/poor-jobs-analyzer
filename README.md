@@ -3,7 +3,7 @@ Analyze poor jobs
 
 # Install
 
-You need Python 3 only :).
+You need Python 3 only :). This project is [Just Python](http://justpython.style/)!
 
 # Run
 
